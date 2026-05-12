@@ -1,0 +1,21 @@
+<!-- Ordered list containing an Unordered list -->
+<ol>
+  <li>First Item
+    <ul>
+      <li>Sub-item A</li>
+      <li>Sub-item B</li>
+    </ul>
+  </li>
+  <li>Second Item</li>
+</ol>
+
+<!-- Unordered list containing an Ordered list -->
+<ul>
+  <li>Main Category
+    <ol>
+      <li>Step 1</li>
+      <li>Step 2</li>
+    </ol>
+  </li>
+  <li>Next Category</li>
+</ul>
