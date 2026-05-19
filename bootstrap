@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HB Lifestyle</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{background:#fdfaf7;}
+.product-card img{height:250px;object-fit:cover;}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
+  <a class="navbar-brand fw-bold">HB Lifestyle</a>
+
+  <form class="d-flex mx-auto w-50">
+    <input class="form-control me-2" placeholder="Search">
+    <button class="btn btn-dark">Search</button>
+  </form>
+
+  <div class="d-flex gap-3">
+    <i class="fas fa-heart"></i>
+    <i class="fas fa-shopping-cart"></i>
+    <i class="fas fa-user" data-bs-toggle="modal" data-bs-target="#loginModal"></i>
+  </div>
+</nav>
+
+<!-- CATEGORY BAR -->
+<div class="bg-warning-subtle text-center py-2">
+  <span class="mx-3">Women</span>
+  <span class="mx-3">Men</span>
+  <span class="mx-3">Kids</span>
+  <span class="mx-3">Footwear</span>
+  <span class="mx-3">Bags</span>
+  <span class="mx-3">Watches</span>
+</div>
+
+<!-- BANNER -->
+<img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=1400&auto=format&fit=crop"
+class="w-100" style="height:500px;object-fit:cover;">
+
+<!-- TITLE -->
+<div class="text-center my-5">
+  <h2>NEW ARRIVAL</h2>
+  <p>Fashion that fits your lifestyle</p>
+</div>
+
+<!-- PRODUCTS -->
+<div class="container">
+
+<!-- WOMEN -->
+<h3 class="text-center mb-4">Women Collection</h3>
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=800">
+<div class="card-body text-center">
+<h5>Floral Dress</h5>
+<p>₹1499</p>
+<button class="btn btn-warning" onclick="addToCart('Floral Dress',1499)">Add</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=800">
+<div class="card-body text-center">
+<h5>Women Kurti</h5>
+<p>₹999</p>
+<button class="btn btn-warning" onclick="addToCart('Women Kurti',999)">Add</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800">
+<div class="card-body text-center">
+<h5>Casual Top</h5>
+<p>₹799</p>
+<button class="btn btn-warning" onclick="addToCart('Casual Top',799)">Add</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- MEN -->
+<h3 class="text-center my-5">Men Collection</h3>
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800">
+<div class="card-body text-center">
+<h5>Men Jacket</h5>
+<p>₹2499</p>
+<button class="btn btn-warning" onclick="addToCart('Men Jacket',2499)">Add</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=800">
+<div class="card-body text-center">
+<h5>T-Shirt</h5>
+<p>₹699</p>
+<button class="btn btn-warning" onclick="addToCart('T-Shirt',699)">Add</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800">
+<div class="card-body text-center">
+<h5>Formal Shirt</h5>
+<p>₹1299</p>
+<button class="btn btn-warning" onclick="addToCart('Formal Shirt',1299)">Add</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- KIDS -->
+<h3 class="text-center my-5">Kids Collection</h3>
+<div class="row g-4">
+
+<div class="col-md-6">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=800">
+<div class="card-body text-center">
+<h5>Kids Hoodie</h5>
+<p>₹899</p>
+<button class="btn btn-warning" onclick="addToCart('Kids Hoodie',899)">Add</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800">
+<div class="card-body text-center">
+<h5>Kids Party Wear</h5>
+<p>₹1199</p>
+<button class="btn btn-warning" onclick="addToCart('Kids Party Wear',1199)">Add</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- FOOTWEAR -->
+<h3 class="text-center my-5">Footwear</h3>
+<div class="row g-4">
+
+<div class="col-md-6">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800">
+<div class="card-body text-center">
+<h5>Shoes</h5>
+<p>₹2299</p>
+<button class="btn btn-warning" onclick="addToCart('Shoes',2299)">Add</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=800">
+<div class="card-body text-center">
+<h5>Sneakers</h5>
+<p>₹1999</p>
+<button class="btn btn-warning" onclick="addToCart('Sneakers',1999)">Add</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- BAGS -->
+<h3 class="text-center my-5">Bags</h3>
+<div class="row g-4">
+
+<div class="col-md-6">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=800">
+<div class="card-body text-center">
+<h5>Luxury Bag</h5>
+<p>₹3199</p>
+<button class="btn btn-warning" onclick="addToCart('Luxury Bag',3199)">Add</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800">
+<div class="card-body text-center">
+<h5>Backpack</h5>
+<p>₹1599</p>
+<button class="btn btn-warning" onclick="addToCart('Backpack',1599)">Add</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- WATCHES -->
+<h3 class="text-center my-5">Watches</h3>
+<div class="row g-4">
+
+<div class="col-md-6">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=800">
+<div class="card-body text-center">
+<h5>Luxury Watch</h5>
+<p>₹4999</p>
+<button class="btn btn-warning" onclick="addToCart('Luxury Watch',4999)">Add</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?q=80&w=800">
+<div class="card-body text-center">
+<h5>Smart Watch</h5>
+<p>₹2799</p>
+<button class="btn btn-warning" onclick="addToCart('Smart Watch',2799)">Add</button>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- CART -->
+<div class="container my-5">
+<div class="card p-4">
+<h4 class="text-center">Shopping Cart</h4>
+<ul id="cartItems" class="list-group mb-3"></ul>
+<h5 class="text-end">Total: ₹<span id="total">0</span></h5>
+</div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal fade" id="loginModal">
+<div class="modal-dialog">
+<div class="modal-content p-3">
+<h4 class="text-center">Sign In</h4>
+<input class="form-control my-2" placeholder="Username">
+<input class="form-control my-2" type="password" placeholder="Password">
+<button class="btn btn-warning w-100">Login</button>
+</div>
+</div>
+</div>
+
+<!-- JS -->
+<script>
+let total=0;
+function addToCart(product,price){
+let li=document.createElement("li");
+li.className="list-group-item";
+li.innerText=product+" - ₹"+price;
+document.getElementById("cartItems").appendChild(li);
+total+=price;
+document.getElementById("total").innerText=total;
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
