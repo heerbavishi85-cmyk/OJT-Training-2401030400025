@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HB Lifestyle</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<style>
+
+body{
+  background:#fdfaf7;
+  overflow-x:hidden;
+}
+
+.product-card img{
+  height:250px;
+  object-fit:cover;
+}
+
+.cursor-pointer{
+  cursor:pointer;
+}
+
+.hover-dark:hover{
+  color:black !important;
+  transition:0.3s;
+}
+
+.hover-warning:hover{
+  color:#ffc107 !important;
+  transition:0.3s;
+}
+
+.transition{
+  transition:0.3s;
+}
+
+.category-item{
+  transition:0.3s;
+  padding:10px 18px;
+  border-radius:15px;
+}
+
+.category-item:hover{
+  background:white;
+  transform:translateY(-3px);
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.category-item i{
+  color:#000;
+  margin-bottom:5px;
+}
+
+.form-control:focus{
+  box-shadow:none;
+  border-color:#000;
+}
+
+.hero-banner{
+  height:500px;
+  object-fit:cover;
+}
+
+.payment-box{
+  background:white;
+  border-radius:25px;
+}
+
+.card{
+  border-radius:20px;
+}
+
+.btn{
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-4 sticky-top shadow-sm">
+
+<a class="navbar-brand fw-bold fs-3" href="#">
+HB Lifestyle
+</a>
+
+<form class="d-flex mx-auto w-25">
+<input class="form-control me-2 rounded-pill px-3"
+placeholder="Search products...">
+<button class="btn btn-dark rounded-pill px-4" type="submit">
+Search
+</button>
+</form>
+
+<div class="d-flex gap-4 align-items-center cursor-pointer">
+
+<i class="fas fa-heart fs-5 text-secondary hover-dark"
+onclick="document.getElementById('wishlistSection').scrollIntoView({behavior:'smooth'});"></i>
+
+<i class="fas fa-shopping-cart fs-5 text-secondary hover-dark"
+onclick="document.getElementById('cartSection').scrollIntoView({behavior:'smooth'});"></i>
+
+<i class="fas fa-user fs-5 text-secondary hover-dark"
+data-bs-toggle="modal"
+data-bs-target="#loginModal"></i>
+
+</div>
+
+</nav>
+
+<!-- CATEGORIES -->
+
+<div class="bg-warning-subtle py-3 shadow-sm sticky-top"
+style="top:72px; z-index:999;">
+
+<div class="container d-flex justify-content-center flex-wrap gap-4">
+
+<div class="text-center cursor-pointer category-item"
+onclick="scrollToSection('womenSection')">
+<i class="bi bi-handbag fs-4 d-block"></i>
+<span class="fw-semibold">Women</span>
+</div>
+
+<div class="text-center cursor-pointer category-item"
+onclick="scrollToSection('menSection')">
+<i class="bi bi-person-standing fs-4 d-block"></i>
+<span class="fw-semibold">Men</span>
+</div>
+
+<div class="text-center cursor-pointer category-item"
+onclick="scrollToSection('kidsSection')">
+<i class="bi bi-emoji-smile fs-4 d-block"></i>
+<span class="fw-semibold">Kids</span>
+</div>
+
+<div class="text-center cursor-pointer category-item"
+onclick="scrollToSection('footwearSection')">
+<i class="bi bi-bag-heart fs-4 d-block"></i>
+<span class="fw-semibold">Footwear</span>
+</div>
+
+<div class="text-center cursor-pointer category-item"
+onclick="scrollToSection('bagsSection')">
+<i class="bi bi-backpack2 fs-4 d-block"></i>
+<span class="fw-semibold">Bags</span>
+</div>
+
+<div class="text-center cursor-pointer category-item"
+onclick="scrollToSection('watchesSection')">
+<i class="bi bi-watch fs-4 d-block"></i>
+<span class="fw-semibold">Watches</span>
+</div>
+
+</div>
+</div>
+
+<!-- BANNER -->
+
+<img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=1400&auto=format&fit=crop"
+class="w-100 hero-banner">
+
+<!-- HEADING -->
+
+<div class="text-center my-5">
+<h2 class="fw-bold text-uppercase"
+style="letter-spacing:2px;">
+NEW ARRIVAL
+</h2>
+
+<p class="text-muted">
+Fashion that fits your lifestyle
+</p>
+</div>
+
+<div class="container">
+
+<!-- WOMEN -->
+
+<h3 class="text-center mb-4 fw-bold"
+id="womenSection">
+Women Collection
+</h3>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card product-card border-0 shadow-sm h-100">
+
+<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=800"
+class="card-img-top">
+
+<div class="card-body text-center d-flex flex-column">
+
+<h5 class="fw-bold">Floral Dress</h5>
+
+<p class="text-muted mb-3">₹1499</p>
+
+<button class="btn btn-warning mt-auto fw-bold rounded-pill"
+onclick="addToCart('Floral Dress',1499)">
+Add to Cart
+</button>
+
+<button class="btn btn-outline-danger rounded-pill fw-bold mt-2"
+onclick="addToWishlist('Floral Dress',1499)">
+<i class="fas fa-heart me-2"></i>Wishlist
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card product-card border-0 shadow-sm h-100">
+
+<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=800"
+class="card-img-top">
+
+<div class="card-body text-center d-flex flex-column">
+
+<h5 class="fw-bold">Women Kurti</h5>
+
+<p class="text-muted mb-3">₹999</p>
+
+<button class="btn btn-warning mt-auto fw-bold rounded-pill"
+onclick="addToCart('Women Kurti',999)">
+Add to Cart
+</button>
+
+<button class="btn btn-outline-danger rounded-pill fw-bold mt-2"
+onclick="addToWishlist('Women Kurti',999)">
+<i class="fas fa-heart me-2"></i>Wishlist
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card product-card border-0 shadow-sm h-100">
+
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800"
+class="card-img-top">
+
+<div class="card-body text-center d-flex flex-column">
+
+<h5 class="fw-bold">Casual Top</h5>
+
+<p class="text-muted mb-3">₹799</p>
+
+<button class="btn btn-warning mt-auto fw-bold rounded-pill"
+onclick="addToCart('Casual Top',799)">
+Add to Cart
+</button>
+
+<button class="btn btn-outline-danger rounded-pill fw-bold mt-2"
+onclick="addToWishlist('Casual Top',799)">
+<i class="fas fa-heart me-2"></i>Wishlist
+</button>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- MEN -->
+
+<h3 class="text-center my-5 fw-bold"
+id="menSection">
+Men Collection
+</h3>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card product-card border-0 shadow-sm h-100">
+
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800"
+class="card-img-top">
+
+<div class="card-body text-center d-flex flex-column">
+
+<h5 class="fw-bold">Men Jacket</h5>
+
+<p class="text-muted mb-3">₹2499</p>
+
+<button class="btn btn-warning mt-auto fw-bold rounded-pill"
+onclick="addToCart('Men Jacket',2499)">
+Add to Cart
+</button>
+
+<button class="btn btn-outline-danger rounded-pill fw-bold mt-2"
+onclick="addToWishlist('Men Jacket',2499)">
+<i class="fas fa-heart me-2"></i>Wishlist
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card product-card border-0 shadow-sm h-100">
+
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800"
+class="card-img-top">
+
+<div class="card-body text-center d-flex flex-column">
+
+<h5 class="fw-bold">T-Shirt</h5>
+
+<p class="text-muted mb-3">₹699</p>
+
+<button class="btn btn-warning mt-auto fw-bold rounded-pill"
+onclick="addToCart('T-Shirt',699)">
+Add to Cart
+</button>
+
+<button class="btn btn-outline-danger rounded-pill fw-bold mt-2"
+onclick="addToWishlist('T-Shirt',699)">
+<i class="fas fa-heart me-2"></i>Wishlist
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card product-card border-0 shadow-sm h-100">
+
+<img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?q=80&w=800"
+class="card-img-top">
+
+<div class="card-body text-center d-flex flex-column">
+
+<h5 class="fw-bold">Formal Shirt</h5>
+
+<p class="text-muted mb-3">₹1299</p>
+
+<button class="btn btn-warning mt-auto fw-bold rounded-pill"
+onclick="addToCart('Formal Shirt',1299)">
+Add to Cart
+</button>
+
+<button class="btn btn-outline-danger rounded-pill fw-bold mt-2"
+onclick="addToWishlist('Formal Shirt',1299)">
+<i class="fas fa-heart me-2"></i>Wishlist
+</button>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- KIDS -->
+
+<h3 class="text-center my-5 fw-bold"
+id="kidsSection">
+Kids Collection
+</h3>
+
+<div class="row g-4">
+
+<div class="col-md-6">
+<div class="card product-card border-0 shadow-sm h-100">
+
+<img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?q=80&w=800"
+class="card-img-top">
+
+<div class="card-body text-center d-flex flex-column">
+
+<h5 class="fw-bold">Kids Hoodie</h5>
+
+<p class="text-muted mb-3">₹899</p>
+
+<button class="btn btn-warning mt-auto fw-bold rounded-pill"
+onclick="addToCart('Kids Hoodie',899)">
+Add to Cart
+</button>
+
+<button class="btn btn-outline-danger rounded-pill fw-bold mt-2"
+onclick="addToWishlist('Kids Hoodie',899)">
+<i class="fas fa-heart me-2"></i>Wishlist
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="card product-card border-0 shadow-sm h-100">
+
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800"
+class="card-img-top">
+
+<div class="card-body text-center d-flex flex-column">
+
+<h5 class="fw-bold">Kids Party Wear</h5>
+
+<p class="text-muted mb-3">₹1199</p>
+
+<button class="btn btn-warning mt-auto fw-bold rounded-pill"
+onclick="addToCart('Kids Party Wear',1199)">
+Add to Cart
+</button>
+
+<button class="btn btn-outline-danger rounded-pill fw-bold mt-2"
+onclick="addToWishlist('Kids Party Wear',1199)">
+<i class="fas fa-heart me-2"></i>Wishlist
+</button>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- FOOTWEAR -->
+
+<h3 class="text-center my-5 fw-bold"
+id="footwearSection">
+Footwear Collection
+</h3>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card product-card border-0 shadow-sm h-100">
+
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800"
+class="card-img-top">
+
+<div class="card-body text-center d-flex flex-column">
+
+<h5 class="fw-bold">Sports Shoes</h5>
+
+<p class="text-muted mb-3">₹2199</p>
+
+<button class="btn btn-warning mt-auto fw-bold rounded-pill"
+onclick="addToCart('Sports Shoes',2199)">
+Add to Cart
+</button>
+
+<button class="btn btn-outline-danger rounded-pill fw-bold mt-2"
+onclick="addToWishlist('Sports Shoes',2199)">
+<i class="fas fa-heart me-2"></i>Wishlist
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card product-card border-0 shadow-sm h-100">
+
+<img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=800"
+class="card-img-top">
+
+<div class="card-body text-center d-flex flex-column">
+
+<h5 class="fw-bold">Casual Sneakers</h5>
+
+<p class="text-muted mb-3">₹1799</p>
+
+<button class="btn btn-warning mt-auto fw-bold rounded-pill"
+onclick="addToCart('Casual Sneakers',1799)">
+Add to Cart
+</button>
+
+<button class="btn btn-outline-danger rounded-pill fw-bold mt-2"
+onclick="addToWishlist('Casual Sneakers',1799)">
+<i class="fas fa-heart me-2"></i>Wishlist
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card product-card border-0 shadow-sm h-100">
+
+<img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800"
+class="card-img-top">
+
+<div class="card-body text-center d-flex flex-column">
+
+<h5 class="fw-bold">Women Heels</h5>
+
+<p class="text-muted mb-3">₹2499</p>
+
+<button class="btn btn-warning mt-auto fw-bold rounded-pill"
+onclick="addToCart('Women Heels',2499)">
+Add to Cart
+</button>
+
+<button class="btn btn-outline-danger rounded-pill fw-bold mt-2"
+onclick="addToWishlist('Women Heels',2499)">
+<i class="fas fa-heart me-2"></i>Wishlist
+</button>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- BAGS -->
+
+<h3 class="text-center my-5 fw-bold"
+id="bagsSection">
+Bags Collection
+</h3>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card product-card border-0 shadow-sm h-100">
+
+<img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800"
+class="card-img-top">
+
+<div class="card-body text-center d-flex flex-column">
+
+<h5 class="fw-bold">Leather Handbag</h5>
+
+<p class="text-muted mb-3">₹1899</p>
+
+<button class="btn btn-warning mt-auto fw-bold rounded-pill"
+onclick="addToCart('Leather Handbag',1899)">
+Add to Cart
+</button>
+
+<button class="btn btn-outline-danger rounded-pill fw-bold mt-2"
+onclick="addToWishlist('Leather Handbag',1899)">
+<i class="fas fa-heart me-2"></i>Wishlist
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card product-card border-0 shadow-sm h-100">
+
+<img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=800"
+class="card-img-top">
+
+<div class="card-body text-center d-flex flex-column">
+
+<h5 class="fw-bold">Travel Backpack</h5>
+
+<p class="text-muted mb-3">₹2299</p>
+
+<button class="btn btn-warning mt-auto fw-bold rounded-pill"
+onclick="addToCart('Travel Backpack',2299)">
+Add to Cart
+</button>
+
+<button class="btn btn-outline-danger rounded-pill fw-bold mt-2"
+onclick="addToWishlist('Travel Backpack',2299)">
+<i class="fas fa-heart me-2"></i>Wishlist
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card product-card border-0 shadow-sm h-100">
+
+<img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?q=80&w=800"
+class="card-img-top">
+
+<div class="card-body text-center d-flex flex-column">
+
+<h5 class="fw-bold">Mini Sling Bag</h5>
+
+<p class="text-muted mb-3">₹1299</p>
+
+<button class="btn btn-warning mt-auto fw-bold rounded-pill"
+onclick="addToCart('Mini Sling Bag',1299)">
+Add to Cart
+</button>
+
+<button class="btn btn-outline-danger rounded-pill fw-bold mt-2"
+onclick="addToWishlist('Mini Sling Bag',1299)">
+<i class="fas fa-heart me-2"></i>Wishlist
+</button>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- WATCHES -->
+
+<h3 class="text-center my-5 fw-bold"
+id="watchesSection">
+Watches Collection
+</h3>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card product-card border-0 shadow-sm h-100">
+
+<img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=800"
+class="card-img-top">
+
+<div class="card-body text-center d-flex flex-column">
+
+<h5 class="fw-bold">Luxury Watch</h5>
+
+<p class="text-muted mb-3">₹4999</p>
+
+<button class="btn btn-warning mt-auto fw-bold rounded-pill"
+onclick="addToCart('Luxury Watch',4999)">
+Add to Cart
+</button>
+
+<button class="btn btn-outline-danger rounded-pill fw-bold mt-2"
+onclick="addToWishlist('Luxury Watch',4999)">
+<i class="fas fa-heart me-2"></i>Wishlist
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card product-card border-0 shadow-sm h-100">
+
+<img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=800"
+class="card-img-top">
+
+<div class="card-body text-center d-flex flex-column">
+
+<h5 class="fw-bold">Smart Watch</h5>
+
+<p class="text-muted mb-3">₹3499</p>
+
+<button class="btn btn-warning mt-auto fw-bold rounded-pill"
+onclick="addToCart('Smart Watch',3499)">
+Add to Cart
+</button>
+
+<button class="btn btn-outline-danger rounded-pill fw-bold mt-2"
+onclick="addToWishlist('Smart Watch',3499)">
+<i class="fas fa-heart me-2"></i>Wishlist
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card product-card border-0 shadow-sm h-100">
+
+<img src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?q=80&w=800"
+class="card-img-top">
+
+<div class="card-body text-center d-flex flex-column">
+
+<h5 class="fw-bold">Classic Watch</h5>
+
+<p class="text-muted mb-3">₹2799</p>
+
+<button class="btn btn-warning mt-auto fw-bold rounded-pill"
+onclick="addToCart('Classic Watch',2799)">
+Add to Cart
+</button>
+
+<button class="btn btn-outline-danger rounded-pill fw-bold mt-2"
+onclick="addToWishlist('Classic Watch',2799)">
+<i class="fas fa-heart me-2"></i>Wishlist
+</button>
+
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- WISHLIST -->
+
+<div class="container my-5" id="wishlistSection">
+
+<div class="card p-4 border-0 shadow-sm">
+
+<h4 class="text-center fw-bold mb-4">
+<i class="fas fa-heart text-danger me-2"></i>
+Wishlist
+</h4>
+
+<ul id="wishlistItems" class="list-group"></ul>
+
+</div>
+</div>
+
+<!-- CART -->
+
+<div class="container my-5" id="cartSection">
+
+<div class="card p-4 border-0 shadow-sm">
+
+<h4 class="text-center fw-bold mb-4">
+<i class="fas fa-shopping-cart text-warning me-2"></i>
+Shopping Cart
+</h4>
+
+<ul id="cartItems" class="list-group mb-4"></ul>
+
+<h4 class="text-end fw-bold text-dark">
+Total:
+<span class="text-success">
+₹<span id="total">0</span>
+</span>
+</h4>
+
+</div>
+</div>
+
+<!-- PAYMENT -->
+
+<div class="container my-5">
+
+<div class="payment-box shadow-lg p-5">
+
+<h2 class="text-center fw-bold mb-5">
+<i class="fas fa-credit-card text-warning me-2"></i>
+Payment Details
+</h2>
+
+<div class="row g-5">
+
+<div class="col-md-6">
+
+<label class="fw-bold mb-2">Full Name</label>
+<input type="text"
+class="form-control rounded-pill mb-3"
+placeholder="Enter Full Name">
+
+<label class="fw-bold mb-2">Mobile Number</label>
+<input type="tel"
+class="form-control rounded-pill mb-3"
+placeholder="Enter Mobile Number">
+
+<label class="fw-bold mb-2">Delivery Address</label>
+
+<textarea class="form-control rounded-4 mb-3"
+rows="5"
+placeholder="Enter Complete Address"></textarea>
+
+<label class="fw-bold mb-2">Pincode</label>
+
+<input type="text"
+class="form-control rounded-pill"
+placeholder="Enter Pincode">
+
+</div>
+
+<div class="col-md-6">
+
+<h5 class="fw-bold mb-4">
+Choose Payment Method
+</h5>
+
+<div class="form-check mb-3">
+<input class="form-check-input"
+type="radio"
+name="payment"
+checked>
+
+<label class="form-check-label fw-semibold">
+<i class="fab fa-google-pay text-primary me-2"></i>
+Google Pay (GPay)
+</label>
+</div>
+
+<div class="form-check mb-3">
+<input class="form-check-input"
+type="radio"
+name="payment">
+
+<label class="form-check-label fw-semibold">
+<i class="fas fa-wallet text-info me-2"></i>
+Paytm
+</label>
+</div>
+
+<div class="form-check mb-4">
+<input class="form-check-input"
+type="radio"
+name="payment">
+
+<label class="form-check-label fw-semibold">
+<i class="fas fa-truck text-success me-2"></i>
+Cash On Delivery
+</label>
+</div>
+
+<div class="bg-light rounded-4 p-4">
+
+<h5 class="fw-bold mb-4">
+Order Summary
+</h5>
+
+<p class="d-flex justify-content-between">
+<span>Items Total</span>
+<span>₹<span id="paymentTotal">0</span></span>
+</p>
+
+<p class="d-flex justify-content-between">
+<span>Delivery Charges</span>
+<span class="text-success">FREE</span>
+</p>
+
+<hr>
+
+<h5 class="d-flex justify-content-between fw-bold">
+<span>Total Amount</span>
+
+<span class="text-success">
+₹<span id="finalTotal">0</span>
+</span>
+</h5>
+
+<button class="btn btn-dark w-100 rounded-pill py-3 fw-bold mt-4"
+onclick="placeOrder()">
+Place Order
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer class="bg-dark text-light py-5 mt-5">
+
+<div class="container">
+
+<div class="row g-5">
+
+<div class="col-md-4">
+
+<h3 class="fw-bold text-warning mb-4">
+<i class="fas fa-info-circle me-2"></i>
+About Us
+</h3>
+
+<p style="line-height:1.9;">
+Welcome to <strong>HB Lifestyle</strong>,
+your premium fashion destination.
+We provide trendy clothing, footwear,
+bags, and watches with modern style and comfort.
+</p>
+
+<div class="d-flex gap-4 mt-4">
+
+<i class="fab fa-facebook fa-2x hover-warning transition cursor-pointer"></i>
+
+<i class="fab fa-instagram fa-2x hover-warning transition cursor-pointer"></i>
+
+<i class="fab fa-twitter fa-2x hover-warning transition cursor-pointer"></i>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<h3 class="fw-bold text-warning mb-4">
+<i class="fas fa-phone-alt me-2"></i>
+Contact Us
+</h3>
+
+<ul class="list-unstyled"
+style="line-height:2.2;">
+
+<li>
+<i class="fas fa-phone text-warning me-2"></i>
++91 98765 43210
+</li>
+
+<li>
+<i class="fas fa-envelope text-warning me-2"></i>
+support@hblifestyle.com
+</li>
+
+<li>
+<i class="fas fa-clock text-warning me-2"></i>
+Mon - Sat : 10 AM - 9 PM
+</li>
+
+</ul>
+
+</div>
+
+<div class="col-md-4">
+
+<h3 class="fw-bold text-warning mb-4">
+<i class="fas fa-map-marker-alt me-2"></i>
+Location
+</h3>
+
+<p style="line-height:2;">
+HB Lifestyle Store,<br>
+SG Highway,<br>
+Ahmedabad, Gujarat,<br>
+India - 380015
+</p>
+
+</div>
+
+</div>
+
+<hr class="border-secondary my-4">
+
+<div class="text-center text-secondary">
+© 2026 HB Lifestyle | All Rights Reserved
+</div>
+
+</div>
+
+</footer>
+
+<!-- LOGIN MODAL -->
+
+<div class="modal fade" id="loginModal">
+
+<div class="modal-dialog modal-dialog-centered">
+
+<div class="modal-content border-0 rounded-4 shadow">
+
+<div class="modal-header border-0">
+
+<h4 class="modal-title fw-bold"
+id="modalTitle">
+Sign In
+</h4>
+
+<button type="button"
+class="btn-close"
+data-bs-dismiss="modal"></button>
+
+</div>
+
+<div class="modal-body px-4 pb-4">
+
+<form id="loginForm">
+
+<div class="mb-3">
+
+<label class="fw-semibold mb-2">
+Email Address
+</label>
+
+<input type="email"
+class="form-control rounded-pill py-2"
+placeholder="Enter your email">
+
+</div>
+
+<div class="mb-3">
+
+<label class="fw-semibold mb-2">
+Password
+</label>
+
+<input type="password"
+class="form-control rounded-pill py-2"
+placeholder="Enter your password">
+
+</div>
+
+<button type="submit"
+class="btn btn-dark w-100 rounded-pill py-2 fw-bold">
+Sign In
+</button>
+
+</form>
+
+<form id="signupForm"
+style="display:none;">
+
+<div class="mb-3">
+
+<label class="fw-semibold mb-2">
+Full Name
+</label>
+
+<input type="text"
+class="form-control rounded-pill py-2"
+placeholder="Enter your name">
+
+</div>
+
+<div class="mb-3">
+
+<label class="fw-semibold mb-2">
+Email Address
+</label>
+
+<input type="email"
+class="form-control rounded-pill py-2"
+placeholder="Enter your email">
+
+</div>
+
+<div class="mb-3">
+
+<label class="fw-semibold mb-2">
+Password
+</label>
+
+<input type="password"
+class="form-control rounded-pill py-2"
+placeholder="Create password">
+
+</div>
+
+<button type="submit"
+class="btn btn-warning w-100 rounded-pill py-2 fw-bold">
+Create Account
+</button>
+
+</form>
+
+<div class="text-center mt-4">
+
+<span id="toggleAuth"
+class="text-primary cursor-pointer fw-semibold">
+
+Don't have an account? Sign Up
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function scrollToSection(sectionId){
+document.getElementById(sectionId).scrollIntoView({
+behavior:'smooth'
+});
+}
+
+/* CART + WISHLIST */
+
+let total = 0;
+let cart = [];
+let wishlist = [];
+
+/* ADD TO CART */
+
+function addToCart(product,price){
+
+const existingItem =
+cart.find(item => item.product === product);
+
+if(existingItem){
+
+existingItem.quantity += 1;
+
+}else{
+
+cart.push({
+product,
+price,
+quantity:1
+});
+
+}
+
+updateCartUI();
+
+alert(`${product} added to cart!`);
+
+}
+
+/* UPDATE CART UI */
+
+function updateCartUI(){
+
+const cartItems =
+document.getElementById("cartItems");
+
+cartItems.innerHTML = "";
+
+total = 0;
+
+cart.forEach((item,index)=>{
+
+const itemTotal =
+item.price * item.quantity;
+
+total += itemTotal;
+
+let li =
+document.createElement("li");
+
+li.className =
+"list-group-item d-flex justify-content-between align-items-center shadow-sm mb-2 rounded border-0";
+
+li.innerHTML = `
+
+<div>
+<h6 class="mb-1 fw-bold">${item.product}</h6>
+
+<div class="d-flex align-items-center gap-2">
+
+<button class="btn btn-sm btn-dark rounded-circle"
+onclick="decreaseQty(${index})">-</button>
+
+<span class="fw-semibold">
+${item.quantity}
+</span>
+
+<button class="btn btn-sm btn-dark rounded-circle"
+onclick="increaseQty(${index})">+</button>
+
+</div>
+</div>
+
+<div class="text-end">
+
+<div class="fw-bold text-success mb-2">
+₹${itemTotal}
+</div>
+
+<button class="btn btn-sm btn-danger rounded-pill"
+onclick="removeItem(${index})">
+
+Remove
+
+</button>
+
+</div>
+
+`;
+
+cartItems.appendChild(li);
+
+});
+
+document.getElementById("total").innerText = total;
+document.getElementById("paymentTotal").innerText = total;
+document.getElementById("finalTotal").innerText = total;
+
+}
+
+/* QUANTITY INCREASE */
+
+function increaseQty(index){
+
+cart[index].quantity += 1;
+updateCartUI();
+
+}
+
+/* QUANTITY DECREASE */
+
+function decreaseQty(index){
+
+if(cart[index].quantity > 1){
+
+cart[index].quantity -= 1;
+
+}else{
+
+cart.splice(index,1);
+
+}
+
+updateCartUI();
+
+}
+
+/* REMOVE ITEM */
+
+function removeItem(index){
+
+cart.splice(index,1);
+updateCartUI();
+
+}
+
+/* WISHLIST */
+
+function addToWishlist(product,price){
+
+const alreadyExists =
+wishlist.find(item => item.product === product);
+
+if(alreadyExists){
+
+alert("Already in wishlist ❤️");
+return;
+
+}
+
+wishlist.push({
+product,
+price
+});
+
+updateWishlistUI();
+
+alert(`${product} added to wishlist ❤️`);
+
+}
+
+function updateWishlistUI(){
+
+const wishlistItems =
+document.getElementById("wishlistItems");
+
+wishlistItems.innerHTML = "";
+
+wishlist.forEach((item,index)=>{
+
+let li =
+document.createElement("li");
+
+li.className =
+"list-group-item d-flex justify-content-between align-items-center shadow-sm mb-2 rounded border-0";
+
+li.innerHTML = `
+
+<div>
+<h6 class="mb-1 fw-bold">${item.product}</h6>
+
+<span class="text-success fw-semibold">
+₹${item.price}
+</span>
+</div>
+
+<div class="d-flex gap-2">
+
+<button class="btn btn-warning rounded-pill btn-sm fw-bold"
+onclick="moveToCart(${index})">
+
+Add to Cart
+
+</button>
+
+<button class="btn btn-danger rounded-pill btn-sm fw-bold"
+onclick="removeWishlist(${index})">
+
+Remove
+
+</button>
+
+</div>
+
+`;
+
+wishlistItems.appendChild(li);
+
+});
+
+}
+
+/* MOVE TO CART */
+
+function moveToCart(index){
+
+const item = wishlist[index];
+
+addToCart(item.product,item.price);
+
+wishlist.splice(index,1);
+
+updateWishlistUI();
+
+}
+
+/* REMOVE WISHLIST ITEM */
+
+function removeWishlist(index){
+
+wishlist.splice(index,1);
+
+updateWishlistUI();
+
+}
+
+/* PLACE ORDER */
+
+function placeOrder(){
+
+if(total === 0){
+
+alert("Please add products to cart before payment!");
+return;
+
+}
+
+const name =
+document.querySelector('input[placeholder="Enter Full Name"]').value;
+
+const mobile =
+document.querySelector('input[placeholder="Enter Mobile Number"]').value;
+
+const address =
+document.querySelector('textarea').value;
+
+const pincode =
+document.querySelector('input[placeholder="Enter Pincode"]').value;
+
+if(name === "" || mobile === "" || address === "" || pincode === ""){
+
+alert("Please fill all delivery details!");
+return;
+
+}
+
+alert("Order Placed Successfully! Thank you for shopping with HB Lifestyle ❤️");
+
+cart = [];
+
+updateCartUI();
+
+}
+
+/* LOGIN SIGNUP */
+
+const toggleAuth =
+document.getElementById("toggleAuth");
+
+const loginForm =
+document.getElementById("loginForm");
+
+const signupForm =
+document.getElementById("signupForm");
+
+const modalTitle =
+document.getElementById("modalTitle");
+
+toggleAuth.addEventListener("click", function(){
+
+if(loginForm.style.display !== "none"){
+
+loginForm.style.display = "none";
+signupForm.style.display = "block";
+
+modalTitle.innerText = "Sign Up";
+
+toggleAuth.innerText =
+"Already have an account? Sign In";
+
+}else{
+
+loginForm.style.display = "block";
+signupForm.style.display = "none";
+
+modalTitle.innerText = "Sign In";
+
+toggleAuth.innerText =
+"Don't have an account? Sign Up";
+
+}
+/* LOGIN SIGNUP */
+
+const toggleAuth =
+document.getElementById("toggleAuth");
+
+const loginForm =
+document.getElementById("loginForm");
+
+const signupForm =
+document.getElementById("signupForm");
+
+const modalTitle =
+document.getElementById("modalTitle");
+
+/* TOGGLE LOGIN SIGNUP */
+
+toggleAuth.addEventListener("click", function(){
+
+if(loginForm.style.display !== "none"){
+
+loginForm.style.display = "none";
+signupForm.style.display = "block";
+
+modalTitle.innerText = "Sign Up";
+
+toggleAuth.innerText =
+"Already have an account? Sign In";
+
+}else{
+
+loginForm.style.display = "block";
+signupForm.style.display = "none";
+
+modalTitle.innerText = "Sign In";
+
+toggleAuth.innerText =
+"Don't have an account? Sign Up";
+
+}
+
+});
+
+/* EMAIL VALIDATION */
+
+function validEmail(email){
+
+return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+}
+
+/* LOGIN VALIDATION */
+
+loginForm.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+const email =
+loginForm.querySelector('input[type="email"]').value.trim();
+
+const password =
+loginForm.querySelector('input[type="password"]').value.trim();
+
+if(email === "" || password === ""){
+
+alert("Please fill all login details!");
+return;
+
+}
+
+if(!validEmail(email)){
+
+alert("Please enter a valid email address!");
+return;
+
+}
+
+if(password.length < 6){
+
+alert("Password must be at least 6 characters!");
+return;
+
+}
+
+alert("Login Successful ❤️");
+
+const modal =
+bootstrap.Modal.getInstance(
+document.getElementById("loginModal")
+);
+
+modal.hide();
+
+});
+
+/* SIGNUP VALIDATION */
+
+signupForm.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+const name =
+signupForm.querySelector('input[type="text"]').value.trim();
+
+const email =
+signupForm.querySelector('input[type="email"]').value.trim();
+
+const password =
+signupForm.querySelector('input[type="password"]').value.trim();
+
+if(name === "" || email === "" || password === ""){
+
+alert("Please fill all signup details!");
+return;
+
+}
+
+if(name.length < 3){
+
+alert("Name must be at least 3 characters!");
+return;
+
+}
+
+if(!validEmail(email)){
+
+alert("Please enter a valid email address!");
+return;
+
+}
+
+if(password.length < 6){
+
+alert("Password must be at least 6 characters!");
+return;
+
+}
+
+alert("Account Created Successfully ❤️");
+
+signupForm.reset();
+
+loginForm.style.display = "block";
+signupForm.style.display = "none";
+
+modalTitle.innerText = "Sign In";
+
+toggleAuth.innerText =
+"Don't have an account? Sign Up";
+
+});
+
+});
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
