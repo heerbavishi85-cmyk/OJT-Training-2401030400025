@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Table Example</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Student Table</h2>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Grade</th>
+    </tr>
+    <tr>
+        <td>heer</td>
+        <td>15</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>ishu</td>
+        <td>14</td>
+        <td>B</td>
+    </tr>
+    <tr>
+        <td>b modi</td>
+        <td>16</td>
+        <td>A+</td>
+    </tr>
+</table>
+
+</body>
+</html>
